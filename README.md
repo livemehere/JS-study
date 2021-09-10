@@ -7,3 +7,4 @@
 5. [array](https://github.com/livemehere/JS-study/tree/master/study/array)
 6. [set](https://github.com/livemehere/JS-study/tree/master/study/set)
 7. [반복문법](https://github.com/livemehere/JS-study/tree/master/study/반복문법)
+8. [모달창](https://github.com/livemehere/JS-study/tree/master/study/modal)
