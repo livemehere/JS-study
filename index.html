@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">click</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-messaging.js"></script>
+<script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyCoIyT6frwe1wnO5dYchVe9SktIcaaOR1s",
+  authDomain: "cling-5838e.firebaseapp.com",
+  projectId: "cling-5838e",
+  storageBucket: "cling-5838e.appspot.com",
+  messagingSenderId: "837754827382",
+  appId: "1:837754827382:web:3300998289aa29ad17a557",
+  measurementId: "G-ZTEECVBS2R",
+};
+
+firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+    // messaging.getToken({vapidKey: "BPuW-vq_VJdkVSJgAEK4R0t5P7P2L-bs8jeQfXMCtITlWYHv-A7_TAAvRzKY70o9UurujPJJIWEcfAEcCTqh5YI"})
+    // .then((result)=>{
+    //     console.log(result)
+    // })
+    messaging.onMessage((payload) => {
+  console.log('Message received. ', payload.notification.body);
+  // ...
+});
+
+</script>
+</body>
+</html>

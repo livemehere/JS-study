@@ -1,9 +1,11 @@
-const arr = ["가", "나", "다", "라"];
+const express = require("express");
+const path = require("path");
+const app = express();
 
-for (let value of arr) {
-  console.log(value);
-}
-// 가
-// 나
-// 다
-// 라
+app.use(express.static(path.join(__dirname)));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.listen(3000);

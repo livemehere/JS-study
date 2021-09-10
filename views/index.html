@@ -5,12 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+    <style>
+      body{
+        display: flex;
+      }
+      article{
+        margin: auto;
+      }
+    </style>
 </head>
 <body>
-    <h1>Hello</h1>
-    <form method="POST" action="/sendfile" enctype="multipart/form-data">
-        <input type="file" name="myfile" multiple >
-        <input type="submit">
-    </form>
+  <article>
+    <h1 class="mytext">HI</h1>
+    <div>
+      <button>button</button>
+    </div>
+  </article>
+<script>
+  const mytext = document.querySelector('.mytext')
+  const button = document.querySelector('button')
+
+  button.addEventListener('click',()=>{
+    if( mytext.innerHTML == 'Bye') {
+      mytext.innerHTML = 'HI'
+    }else{
+      mytext.innerHTML = 'Bye'
+    }
+
+
+  })
+</script>
 </body>
 </html>
