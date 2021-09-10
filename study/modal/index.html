@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAL</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: 0 auto;
+            display:flex;
+            justify-content:center;
+
+        }
+        button{
+            padding: 0.5rem;
+            margin: 0.5rem;
+        }
+        .modal_background{
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color:rgba(0, 0, 0, 0.3);
+            z-index:1000;
+            display:none;
+        }
+        .modal{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            background-color: white;
+            width: 40vw;
+            height: 20vh;
+            border-radius:10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.235);
+            justify-content:center;
+            align-items:center;
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            transition: all 200ms
+        }
+        .modal:hover{
+            cursor: pointer;
+            transform: translate(-50%,-50%) scale(1.01)
+        }
+    </style>
+</head>
+<body>
+    <div class="modal_background"><div class="modal">모달창0</div></div>
+    <div class="modal_background"><div class="modal">모달창1</div></div>
+    <div class="modal_background"><div class="modal">모달창2</div></div>
+
+    <div class="container button_box">
+        <button data-num="0">버튼0</button>
+        <button data-num="1">버튼1</button>
+        <button data-num="2">버튼2</button>
+    </div>
+
+
+<script>
+    const button_box = document.querySelector(".button_box")
+    const modal_background = document.querySelectorAll('.modal_background')
+
+    button_box.addEventListener("click",(e)=>{
+        const modal_number = e.target.dataset.num;
+        modal_background[modal_number].style.display = "block"
+        modal_background[modal_number].children[0].addEventListener("click",function(){
+            this.parentElement.style.display = "none"
+        })
+    })
+</script>
+</body>
+</html>
